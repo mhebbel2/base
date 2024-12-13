@@ -6,7 +6,7 @@ apt-get -y -qq upgrade
 #
 # ---
 sed -i '/^AcceptEnv/s/$/ GH_TOKEN OPENAI_API_KEY/' /etc/ssh/sshd_config
-# sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/g' /etc/ssh/sshd_config && systemctl restart sshd
+sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/g' /etc/ssh/sshd_config && systemctl restart sshd
 #echo fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf &&  sysctl -p
 
 #--- Docker
