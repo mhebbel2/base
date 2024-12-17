@@ -5,7 +5,8 @@ if [[ -z $TERMUX ]];
 then
 	curl -fsSL https://code-server.dev/install.sh | sh
 else
-	pkg install tur-repo code-server
+	pkg install tur-repo
+	pkg install code-server
 fi
 
 # code extensions
