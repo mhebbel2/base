@@ -24,7 +24,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg |  dd o
 && chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" |  tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 #--- Now Install
-PACKAGES="git gh mosh tmux bash-completion ripgrep build-essential jq htop zip unzip fzf bat cmake nodejs rust"
+PACKAGES="git gh mosh tmux bash-completion ripgrep build-essential jq htop zip unzip fzf bat cmake nodejs "
 SPECIFIC_DEBIAN="python3-pip fd-find"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
