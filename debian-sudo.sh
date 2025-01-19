@@ -26,9 +26,10 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg |  dd o
 #--- Now Install
 PACKAGES="git gh mosh tmux bash-completion ripgrep build-essential jq htop zip unzip fzf bat cmake nodejs "
 SPECIFIC_DEBIAN="python3-pip fd-find"
+SPECIFIC_AIC="sqlite3 sqlite3-dev"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
-apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $DOCKER >/dev/null
+apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_AIC $DOCKER >/dev/null
 
 npm install -s -g typescript bash-language-server typescript-language-server 
 
