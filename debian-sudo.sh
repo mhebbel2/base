@@ -28,6 +28,7 @@ PACKAGES="git gh mosh tmux bash-completion ripgrep build-essential jq htop zip u
 SPECIFIC_DEBIAN="python3-pip fd-find"
 SPECIFIC_AIC="sqlite3"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
+SPECIFIC_NVIM="fuse libfuse2"
 
 apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_AIC $DOCKER >/dev/null
 
