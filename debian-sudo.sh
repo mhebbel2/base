@@ -41,5 +41,6 @@ addgroup fuse
 usermod -aG fuse user
 
 mkdir -p /home/user/.ssh/
+cp base/ssh-config /home/user/.ssh/
 mkdir -p /home/user/projects/
 chown -R user /home/user
