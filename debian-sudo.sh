@@ -1,9 +1,6 @@
 # !/bin/bash
 #
 export DEBIAN_FRONTEND=noninteractive
-apt-get -y -qq update
-apt-get -y -qq upgrade 
-#
 # ---
 sed -i '/^AcceptEnv/s/$/ GH_TOKEN OPENAI_API_KEY/' /etc/ssh/sshd_config
 sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/g' /etc/ssh/sshd_config && systemctl restart sshd
@@ -26,15 +23,13 @@ SPECIFIC_NVIM="fuse libfuse2"
 apt-get -y -qq update
 apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_AIC $SPECIFIC_NVIM $DOCKER >/dev/null
 
-
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
 usermod -aG docker user
 addgroup fuse
 usermod -aG fuse user
 
-ssh-keyscan -H github.com > .ssh/known_hosts
-cp .ssh /home/user/
+cp -r .ssh /home/user/
 cp base/ssh-config /home/user/.ssh/
 mkdir -p /home/user/projects/
 chown -R user /home/user
