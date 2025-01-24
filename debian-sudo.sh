@@ -36,6 +36,7 @@ npm install -s -g typescript bash-language-server typescript-language-server
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
 usermod -aG docker user
+addgroup fuse
 usermod -aG fuse user
 
 mkdir -p /home/user/.ssh/
