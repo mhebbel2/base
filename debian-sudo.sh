@@ -33,7 +33,8 @@ usermod -aG docker user
 addgroup fuse
 usermod -aG fuse user
 
-mkdir -p /home/user/.ssh/
+ssh-keyscan -H github.com > .ssh/known_hosts
+cp .ssh /home/user/
 cp base/ssh-config /home/user/.ssh/
 mkdir -p /home/user/projects/
 chown -R user /home/user
