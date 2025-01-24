@@ -31,6 +31,11 @@ DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 
 apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_AIC $DOCKER >/dev/null
 
+# --- until we get debian-13 install from unstable archive
+add-apt-repository ppa:neovim-ppa/unstable
+apt-get update
+apt-get install neovim
+
 npm install -s -g typescript bash-language-server typescript-language-server 
 
 # --- create user
