@@ -33,8 +33,6 @@ apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_AIC $DOCKER >/dev/nu
 
 npm install -s -g typescript bash-language-server typescript-language-server 
 
-cp base/debian-nvim /usr/local/bin/nvim
-
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
 usermod -aG docker user
