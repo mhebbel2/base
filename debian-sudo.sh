@@ -38,3 +38,6 @@ cp base/debian-nvim /usr/local/bin/nvim
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
 usermod -aG docker user
+mkdir -p /home/user/.ssh/
+mkdir -p /home/user/projects/
+
