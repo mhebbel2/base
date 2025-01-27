@@ -14,7 +14,7 @@ echo \
 	$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
-PACKAGES="git bash-completion ripgrep build-essential jq htop zip unzip bat cmake "
+PACKAGES="git mosh bash-completion ripgrep build-essential jq htop zip unzip bat cmake "
 SPECIFIC_DEBIAN="python3-pip fd-find"
 SPECIFIC_AIC="sqlite3"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
