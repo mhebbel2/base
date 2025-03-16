@@ -14,14 +14,13 @@ echo \
 	$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
-PACKAGES="git tmux mosh bash-completion ripgrep build-essential jq htop zip unzip bat cmake "
+PACKAGES="git tmux mosh bash-completion ripgrep build-essential jq htop zip unzip bat cmake tigervnc jwm"
 SPECIFIC_DEBIAN="python3-pip fd-find"
-SPECIFIC_AIC="sqlite3"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 SPECIFIC_NVIM="fuse libfuse2"
 
 apt-get -y -qq update
-apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_AIC $SPECIFIC_NVIM $DOCKER >/dev/null
+apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/dev/null
 
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
