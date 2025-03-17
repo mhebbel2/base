@@ -22,6 +22,8 @@ SPECIFIC_NVIM="fuse libfuse2"
 apt-get -y -qq update
 apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/dev/null
 
+apt-get install -y -qq tigervnc-standalone-server tigervnc-common tigervnc-tools xfce4 xterm firefox-esr
+
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
 usermod -aG docker user
