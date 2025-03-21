@@ -21,7 +21,7 @@ DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 SPECIFIC_NVIM="fuse libfuse2"
 
 apt-get -y -qq update
-apt-get -y -qq install $PACKAGES $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/dev/null
+apt-get -y -qq install $PACKAGES $VNC $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/dev/null
 
 apt-get install -y -qq tigervnc-standalone-server tigervnc-common tigervnc-tools xfce4 xterm firefox-esr
 
