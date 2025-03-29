@@ -13,9 +13,9 @@ CONDA=$HOME/.anaconda3/bin/conda
 $CONDA config --set auto_activate_base false
 $CONDA init bash
 $CONDA install -y argcomplete
-$CONDA create -y -n myenv  jupyter jupyterlab matplotlib numpy ipykernel
+# $CONDA create -y -n myenv  jupyter jupyterlab matplotlib numpy ipykernel
 
 echo 'export PATH=$HOME/.anaconda3/bin:$PATH' >> $HOME/.bashrc
 echo 'eval "$(register-python-argcomplete conda)"' >> $HOME/.bashrc
 
-python3 -m ipykernel install --user --name=myenv
+# python3 -m ipykernel install --user --name=myenv

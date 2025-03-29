@@ -37,5 +37,5 @@ curl -sSL https://github.com/fluxcd/flux2/releases/download/$FILENAME -o $TMPDIR
 tar -xzf $TMPDIR/flux.tgz -C $BINDIR
 
 # hcloud
-curl -sSL https://github.com/hetznercloud/cli/releases/download/v1.50.0/hcloud-linux-amd64.tar.gz -o $TMPDIR/flux.tgz
-tar -xzf $TMPDIR/flux.tgz -C $BINDIR hcloud
+curl -sSL https://github.com/hetznercloud/cli/releases/download/v1.50.0/hcloud-linux-amd64.tar.gz -o $TMPDIR/hcloud.tgz
+tar -xzf $TMPDIR/hcloud.tgz -C $BINDIR hcloud
