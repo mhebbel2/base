@@ -10,7 +10,7 @@ echo \
 	$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
-PACKAGES="git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake "
+PACKAGES="openssh-server git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake "
 VNC="tigervnc-standalone-server tigervnc-common jwm"
 SPECIFIC_DEBIAN="python3-pip fd-find"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
