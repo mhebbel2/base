@@ -15,15 +15,13 @@ echo \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
 PACKAGES="git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake "
-VNC="tigervnc-standalone-server tigervnc-common jwm"
+VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools xfce4 xterm firefox-esr"
 SPECIFIC_DEBIAN="python3-pip fd-find"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 SPECIFIC_NVIM="fuse libfuse2"
 
 apt-get -y -qq update
 apt-get -y -qq install $PACKAGES $VNC $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/dev/null
-
-apt-get install -y -qq tigervnc-standalone-server tigervnc-common tigervnc-tools xfce4 xterm firefox-esr
 
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
