@@ -11,7 +11,7 @@ echo \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
 PACKAGES="git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake "
-VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools xfce4 xterm firefox-esr"
+VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools xfce4 xterm firefox-esr ufw"
 SPECIFIC_DEBIAN="python3-pip fd-find"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 SPECIFIC_NVIM="fuse libfuse2"
@@ -23,6 +23,12 @@ apt-get -y -qq install $PACKAGES $VNC $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/
 sed -i '/^AcceptEnv/s/$/ *_TOKEN *_API_KEY/' /etc/ssh/sshd_config
 sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/g' /etc/ssh/sshd_config && systemctl restart sshd
 gcho fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf &&  sysctl -p
+
+# --- firewall
+
+ufw default deny incoming
+ufw allow OpenSSH
+ufw enable
 
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
