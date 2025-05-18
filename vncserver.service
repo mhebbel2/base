@@ -1,0 +1,14 @@
+[Unit]
+Description=TigerVNC Server for XFCE4
+After=multi-user.target
+
+[Service]
+User=user
+WorkingDirectory=/home/user
+Type=forking
+ExecStart=/usr/bin/vncserver -geometry 1280x720 -depth 24 :1 
+ExecStop=/usr/bin/vncserver -kill :1
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

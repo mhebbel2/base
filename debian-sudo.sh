@@ -21,8 +21,11 @@ apt-get -y -qq install $PACKAGES $VNC $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/
 # ---
 sed -i '/^AcceptEnv/s/$/ *_TOKEN *_API_KEY/' /etc/ssh/sshd_config
 sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/g' /etc/ssh/sshd_config && systemctl restart sshd
-gcho fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf &&  sysctl -p
+echo fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf &&  sysctl -p
 
+cp /root/base/vncserver.service /etc/systemd/system/
+systemctl enable vncserver.service
+systemctl start vncserver.service
 # --- firewall
 
 ufw default deny incoming
