@@ -11,7 +11,7 @@ echo \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
 PACKAGES="git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree"
-VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools xfce4 xfce4-terminal firefox-esr chromium ufw"
+VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 xfce4 xfce4-terminal firefox-esr chromium ufw"
 SPECIFIC_DEBIAN="python3-pip fd-find"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 SPECIFIC_NVIM="fuse libfuse2"
