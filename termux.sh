@@ -8,7 +8,7 @@ pkg install -y $SPECIFIC_TERMUX $PACKAGES $APP_ALT
 
 mkdir -p $HOME/bin
 ln -sf /data/data/com.termux/files/usr/bin/nvim $HOME/bin/termux-file-editor
-cp $HOME/projects/dev/dotfiles/termux.properties $HOME/.termux
+cp $HOME/base/dotfiles/termux.properties $HOME/.termux
 
 TMPDIR=./tmp/kube
 mkdir -p $TMPDIR
