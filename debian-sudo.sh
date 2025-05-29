@@ -43,3 +43,5 @@ systemctl enable vncserver.service
 systemctl start vncserver.service
 
 chown -R user /home/user
+
+su - /root/base/debian-user.sh

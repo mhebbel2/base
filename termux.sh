@@ -4,7 +4,7 @@ PACKAGES="git gnupg tmux bash-completion ripgrep build-essential jq htop zip unz
 APP_ALT="hcloud rclone"
 pkg update -y
 pkg upgrade -y
-pkg install -y $SPECIFIC_TERMUX $PACKAGES $APP_ALT $FOR_LANGCHAIN
+pkg install -y $SPECIFIC_TERMUX $PACKAGES $APP_ALT
 
 mkdir -p $HOME/bin
 ln -sf /data/data/com.termux/files/usr/bin/nvim $HOME/bin/termux-file-editor
