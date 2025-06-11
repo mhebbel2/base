@@ -10,7 +10,7 @@ echo \
 	$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
-PACKAGES="git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree"
+PACKAGES="git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgres-client"
 VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 xfce4 xfce4-terminal firefox-esr chromium ufw"
 SPECIFIC_DEBIAN="python3-pip fd-find"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
@@ -41,7 +41,8 @@ mkdir -p /home/user/projects/
 cp /root/base/vncserver.service /etc/systemd/system/
 systemctl enable vncserver.service
 systemctl start vncserver.service
+cp /root/base/debian-user.sh /home/user
 
 chown -R user /home/user
 
-su - /root/base/debian-user.sh
+su - user debian-user.sh
