@@ -10,14 +10,12 @@ echo \
 	$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 #--- Now Install
-PACKAGES="git tmux bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgresql-client"
-VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 xfce4 xfce4-terminal firefox-esr chromium ufw"
-SPECIFIC_DEBIAN="python3-pip fd-find"
+PACKAGES="git tmux neovim fzf ufw wireguard bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgresql-client python3-pip fd-find"
+VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 xfce4 xfce4-terminal chromium "
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
-SPECIFIC_NVIM="fuse libfuse2"
 
 apt-get -y -qq update
-apt-get -y -qq install $PACKAGES $VNC $SPECIFIC_DEBIAN $SPECIFIC_NVIM $DOCKER >/dev/null
+apt-get -y -qq install $PACKAGES $VNC $DOCKER >/dev/null
 # ---
 # sed -i '/^AcceptEnv/s/$/ *_TOKEN *_API_KEY/' /etc/ssh/sshd_config
 # sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/g' /etc/ssh/sshd_config && systemctl restart sshd
