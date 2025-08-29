@@ -13,9 +13,6 @@ get_machine_type() {
     esac
 }
 
-
-
-
 BINDIR=$HOME/.local/bin
 mkdir -p $BINDIR
 
@@ -26,7 +23,6 @@ ln -sf /usr/bin/batcat $HOME/.local/bin/bat
 ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
 
 MTYPE=$(get_machine_type)
-
 
 # --- get the right yq for debian (the standard one is strange) 
 curl -L https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$MTYPE -o $BINDIR/yq && chmod +x $BINDIR/yq
