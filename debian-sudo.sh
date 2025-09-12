@@ -11,15 +11,13 @@ echo \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #--- Now Install
-PACKAGES="git tmux neovim fzf ufw wireguard bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgresql-client python3-pip fd-find"
+PACKAGES="git tmux fzf ufw wireguard bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgresql-client python3-pip fd-find rclone podman"
 VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 xfce4 xfce4-terminal chromium "
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
 apt-get -y -qq update
 apt-get -y -qq install $PACKAGES $VNC $DOCKER >/dev/null
 # ---
-# sed -i '/^AcceptEnv/s/$/ *_TOKEN *_API_KEY/' /etc/ssh/sshd_config
-# sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/g' /etc/ssh/sshd_config && systemctl restart sshd
 echo fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf &&  sysctl -p
 localectl set-locale LANG=en_US.UTF-8
 
