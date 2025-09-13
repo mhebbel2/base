@@ -13,6 +13,8 @@ get_machine_type() {
     esac
 }
 
+MTYPE=$(get_machine_type)
+
 BINDIR=$HOME/.local/bin
 mkdir -p $BINDIR
 
@@ -22,7 +24,24 @@ mkdir -p $TMPDIR
 ln -sf /usr/bin/batcat $HOME/.local/bin/bat
 ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
 
-MTYPE=$(get_machine_type)
+ln -sf $HOME/projects/base/dotfiles/tmux.conf $HOME/.tmux.conf
+ln -sf $HOME/projects/base/dotfiles/inputrc $HOME/.inputrc
+
+mkdir -p $HOME/.config/pip
+ln -sf $HOME/projects/base/dotfiles/pip.conf $HOME/.config/pip/pip.conf
+
+mkdir -p $HOME/.config/nvim/
+ln -sf $HOME/projects/base/dotfiles/init.lua $HOME/.config/nvim/init.lua
+
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+ln -sf $HOME/projects/base/dotfiles/vimrc $HOME/.vimrc
+
+git config --global pull.rebase false
+git config --global init.defaultBranch main
+pip3 install -qqq 'python-lsp-server[all]'
+
 
 # --- get the right yq for debian (the standard one is strange) 
 curl -L https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$MTYPE -o $BINDIR/yq && chmod +x $BINDIR/yq
@@ -30,12 +49,18 @@ curl -L https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$MTYP
 # gh cli
 curl -L https://github.com/cli/cli/releases/download/v2.70.0/gh_2.70.0_linux_$MTYPE.tar.gz -o $TMPDIR/gh.tgz
 tar -xf $TMPDIR/gh.tgz -C $BINDIR --strip-components=2 gh_2.70.0_linux_$MTYPE/bin/gh
+if command -v gh &> /dev/null; then
+	gh config set git_protocol ssh
+fi
 
 # nvm/node/npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm install 20
+
+
+npm install -s -g typescript bash-language-server typescript-language-server 
 
 # --------------- cloud native stufff
 #

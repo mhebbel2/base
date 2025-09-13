@@ -1,0 +1,26 @@
+set keyseq-timeout 300
+set show-mode-in-prompt on
+set editing-mode vi
+$if mode=vi
+	set keymap vi-command
+	"jk": vi-insertion-mode
+	set keymap vi-insert
+	"jk": vi-movement-mode
+$endif
+
+set vi-cmd-mode-string |
+set vi-ins-mode-string -
+
+set page-completions off
+set bell-style none
+set skip-completed-text on
+
+set colored-stats On
+set completion-ignore-case On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set visible-stats On
+
+set history-size 10000

@@ -1,0 +1,35 @@
+" --- General Settings ---
+set nocompatible         " Behave like a real Vim, not Vi
+set backspace=indent,eol,start  " Allow backspace to delete everything
+set number               " Show line numbers
+set cursorline           " Highlight the current line
+set showmatch            " Show matching brackets
+set incsearch            " Incremental search
+set wildmenu             " Enable command line completion menu
+
+let mapleader = " "
+
+nnoremap <Space> <Nop>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set ignorecase
+set nonumber
+set smartcase
+
+colorscheme koehler
+
+" --- Plugin Manager (Vim-Plug) ---
+call plug#begin('~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+" --- Plugin-specific Settings ---
