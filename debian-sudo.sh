@@ -38,8 +38,8 @@ usermod -aG docker user
 cp -r .ssh /home/user/
 mkdir -p /home/user/projects/
 
-cp /root/base/debian-user.sh /home/user
+cp -r /root/base /home/user/projects
 
 chown -R user /home/user
 
-su - user debian-user.sh
+su - user /home/user/projects/base/debian-user.sh
