@@ -13,6 +13,7 @@ nnoremap <Space> <Nop>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>e :Ex<CR>
 set tabstop=4
 set shiftwidth=4
 set expandtab
