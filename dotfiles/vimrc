@@ -20,6 +20,13 @@ set expandtab
 set ignorecase
 set nonumber
 set smartcase
+set laststatus=2      " Always show the status line
+set statusline=%t     " Show the filename
+set statusline+=\ %h%m%r     " Flags
+set statusline+=%=           " Right-align
+set statusline+=\ %l:%c      " Line and column
+set statusline+=\ %P         " Percentage
+
 
 colorscheme koehler
 
