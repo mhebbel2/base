@@ -59,11 +59,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm install 20
 
-
 npm install -s -g typescript bash-language-server typescript-language-server 
-
-# --------------- cloud native stufff
-#
 
 # kubectl
 curl -sSL https://dl.k8s.io/release/v1.30.9/bin/linux/$MTYPE/kubectl -o $BINDIR/kubectl
@@ -76,3 +72,9 @@ tar -xzf $TMPDIR/flux.tgz -C $BINDIR
 
 # hcloud
 curl -sSL https://github.com/hetznercloud/cli/releases/download/v1.50.0/hcloud-linux-$MTYPE.tar.gz -o $TMPDIR/hcloud.tgz
+tar -xzf $TMPDIR/hcloud.tgz -C $BINDIR
+
+# nvim 
+curl -sSL https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz -o $TMPDIR/nvim.tgz
+tar -xzf $TMPDIR/nvim.tgz -C $TMPDIR
+cp -r $TMPDIR/nvim-linux-x86_64/* $HOME/.local/
