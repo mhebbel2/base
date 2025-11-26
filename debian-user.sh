@@ -78,3 +78,7 @@ tar -xzf $TMPDIR/hcloud.tgz -C $BINDIR
 curl -sSL https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz -o $TMPDIR/nvim.tgz
 tar -xzf $TMPDIR/nvim.tgz -C $TMPDIR
 cp -r $TMPDIR/nvim-linux-x86_64/* $HOME/.local/
+
+if ! grep -q "base/dotfiles/bashrc" $HOME/.bashrc; then
+    echo "source ${HOME}/projects/base/dotfiles/bashrc" >> $HOME/.bashrc
+fi
