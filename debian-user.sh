@@ -36,8 +36,6 @@ ln -sf $HOME/projects/base/dotfiles/init.lua $HOME/.config/nvim/init.lua
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-ln -sf $HOME/projects/base/dotfiles/vimrc $HOME/.vimrc
-
 git config --global pull.rebase false
 git config --global init.defaultBranch main
 pip3 install -qqq 'python-lsp-server[all]'
