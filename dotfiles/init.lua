@@ -50,9 +50,9 @@ require("lazy").setup({
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	},
-	{
-		"terrortylor/nvim-comment"
-	},
+	-- {
+	-- 	"terrortylor/nvim-comment"
+	-- },
 })
 
 require("mason").setup()
@@ -108,6 +108,6 @@ require('lspconfig').pylsp.setup({capabilities = capabilities,
 require('lspconfig').ts_ls.setup{capabilities = capabilities}
 require('lspconfig').bashls.setup{capabilities = capabilities}
 --
-require('nvim_comment').setup()
+-- require('nvim_comment').setup()
 
 vim.cmd[[colorscheme koehler]]
