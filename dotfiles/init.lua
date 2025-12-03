@@ -14,6 +14,7 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.ignorecase = true
+vim.o.laststatus = 0
 vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 vim.cmd[[colorscheme koehler]]
 
