@@ -140,16 +140,16 @@ else
     bind -m emacs-standard -x '"\C-t": fzf-file-widget'
     bind -m vi-command -x '"\C-t": fzf-file-widget'
     bind -m vi-insert -x '"\C-t": fzf-file-widget'
-    bind -m vi-command -x '"jf": fzf-file-widget'
-    bind -m vi-insert -x '"jf": fzf-file-widget'
+    # bind -m vi-command -x '"jf": fzf-file-widget'
+    # bind -m vi-insert -x '"jf": fzf-file-widget'
   fi
 
   # CTRL-R - Paste the selected command from history into the command line
   bind -m emacs-standard -x '"\C-r": __fzf_history__'
   bind -m vi-command -x '"\C-r": __fzf_history__'
   bind -m vi-insert -x '"\C-r": __fzf_history__'
-  bind -m vi-command '"jr": "\C-z\C-r\C-z"'
-  bind -m vi-insert '"jr": "\C-z\C-r\C-z"'
+  # bind -m vi-command '"jr": "\C-z\C-r\C-z"'
+  # bind -m vi-insert '"jr": "\C-z\C-r\C-z"'
 fi
 
 # ALT-C - cd into the selected directory
@@ -157,8 +157,8 @@ if [[ "${FZF_ALT_C_COMMAND-x}" != "" ]]; then
   bind -m emacs-standard '"\ec": " \C-b\C-k \C-u`__fzf_cd__`\e\C-e\er\C-m\C-y\C-h\e \C-y\ey\C-x\C-x\C-d"'
   bind -m vi-command '"\ec": "\C-z\ec\C-z"'
   bind -m vi-insert '"\ec": "\C-z\ec\C-z"'
-  bind -m vi-command '"jc": "\C-z\ec\C-z"'
-  bind -m vi-insert '"jc": "\C-z\ec\C-z"'
+  # bind -m vi-command '"jc": "\C-z\ec\C-z"'
+  # bind -m vi-insert '"jc": "\C-z\ec\C-z"'
 fi
 
 fi

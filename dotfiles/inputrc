@@ -1,4 +1,4 @@
-set keyseq-timeout 300
+set keyseq-timeout 30
 set show-mode-in-prompt on
 set editing-mode vi
 $if mode=vi
