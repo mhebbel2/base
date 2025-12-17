@@ -137,9 +137,9 @@ if (( BASH_VERSINFO[0] < 4 )); then
 else
   # CTRL-T - Paste the selected file path into the command line
   if [[ "${FZF_CTRL_T_COMMAND-x}" != "" ]]; then
-    bind -m emacs-standard -x '"\C-t": fzf-file-widget'
-    bind -m vi-command -x '"\C-t": fzf-file-widget'
-    bind -m vi-insert -x '"\C-t": fzf-file-widget'
+    bind -m emacs-standard -x '"\C-f": fzf-file-widget'
+    bind -m vi-command -x '"\C-f": fzf-file-widget'
+    bind -m vi-insert -x '"\C-f": fzf-file-widget'
     # bind -m vi-command -x '"jf": fzf-file-widget'
     # bind -m vi-insert -x '"jf": fzf-file-widget'
   fi
@@ -155,8 +155,8 @@ fi
 # ALT-C - cd into the selected directory
 if [[ "${FZF_ALT_C_COMMAND-x}" != "" ]]; then
   bind -m emacs-standard '"\ec": " \C-b\C-k \C-u`__fzf_cd__`\e\C-e\er\C-m\C-y\C-h\e \C-y\ey\C-x\C-x\C-d"'
-  bind -m vi-command '"\ec": "\C-z\ec\C-z"'
-  bind -m vi-insert '"\ec": "\C-z\ec\C-z"'
+  bind -m vi-command '"\C-g": "\C-z\ec\C-z"'
+  bind -m vi-insert '"\C-g": "\C-z\ec\C-z"'
   # bind -m vi-command '"jc": "\C-z\ec\C-z"'
   # bind -m vi-insert '"jc": "\C-z\ec\C-z"'
 fi

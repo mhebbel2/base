@@ -1,12 +1,12 @@
 set keyseq-timeout 30
 set show-mode-in-prompt on
 set editing-mode vi
-$if mode=vi
-	set keymap vi-command
-	"jk": vi-insertion-mode
-	set keymap vi-insert
-	"jk": vi-movement-mode
-$endif
+# $if mode=vi
+# 	set keymap vi-command
+# 	"jk": vi-insertion-mode
+# 	set keymap vi-insert
+# 	"jk": vi-movement-mode
+# $endif
 
 set vi-cmd-mode-string |
 set vi-ins-mode-string -

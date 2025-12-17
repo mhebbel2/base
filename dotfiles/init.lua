@@ -25,7 +25,7 @@ local map = vim.api.nvim_set_keymap
 map('n', '<Space>', '', {})
 
 options = { noremap = true }
-vim.keymap.set('i', 'jk', '<Esc>')
+-- vim.keymap.set('i', 'jk', '<Esc>')
 -- map('n', '<leader><space>', '<C-W><C-W>', options)
 map('n', '<leader>a', ':%!qagent<cr>', options)
 -- map('n', '<leader>e', ':Ex<cr>', options)

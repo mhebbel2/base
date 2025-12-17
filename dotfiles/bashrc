@@ -58,6 +58,9 @@ if command -v fzf &>/dev/null; then
 	source <(fzf --bash)
 fi
 
+# Disable XON/XOFF flow control (Ctrl+S and Ctrl+Q)
+stty -ixon
+
 # make sure that child processes exit when you leave a shell
 shopt -s huponexit
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session ;}
