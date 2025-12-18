@@ -11,7 +11,7 @@ echo \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #--- Now Install
-PACKAGES="git tmux vim fzf ufw wireguard bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgresql-client python3-pip fd-find rclone podman"
+PACKAGES="git tmux vim fzf ufw fail2ban wireguard bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgresql-client python3-pip fd-find rclone podman"
 VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 xfce4 xfce4-terminal chromium "
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
