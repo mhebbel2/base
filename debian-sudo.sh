@@ -12,11 +12,10 @@ echo \
 
 #--- Now Install
 PACKAGES="git tmux vim fzf ufw fail2ban wireguard bash-completion ripgrep build-essential jq htop zip unzip bat cmake tree postgresql-client python3-pip fd-find rclone podman"
-VNC="tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 xfce4 xfce4-terminal chromium "
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
 apt-get -y -qq update
-apt-get -y -qq install $PACKAGES $VNC $DOCKER >/dev/null
+apt-get -y -qq install $PACKAGES $DOCKER >/dev/null
 # ---
 echo fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf &&  sysctl -p
 localectl set-locale LANG=en_US.UTF-8
@@ -25,11 +24,6 @@ localectl set-locale LANG=en_US.UTF-8
 ufw default deny incoming
 ufw allow OpenSSH
 ufw enable
-
-# --- vnc
-cp /root/base/vncserver.service /etc/systemd/system/
-systemctl enable vncserver.service
-systemctl start vncserver.service
 
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
