@@ -45,9 +45,11 @@ pip3 install -qqq 'python-lsp-server[all]'
 curl -L https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$MTYPE -o $BINDIR/yq && chmod +x $BINDIR/yq
 
 # gh cli
-curl -L https://github.com/cli/cli/releases/download/v2.70.0/gh_2.70.0_linux_$MTYPE.tar.gz -o $TMPDIR/gh.tgz
-tar -xf $TMPDIR/gh.tgz -C $BINDIR --strip-components=2 gh_2.70.0_linux_$MTYPE/bin/gh
+curl -L https://github.com/cli/cli/releases/download/v2.83.2/gh_2.83.2_linux_$MTYPE.tar.gz -o $TMPDIR/gh.tgz
+tar -xf $TMPDIR/gh.tgz -C $BINDIR --strip-components=2 gh_2.83.2_linux_$MTYPE/bin/gh
 if command -v gh &> /dev/null; then
+	mkdir -p $HOME/.config/gh
+	ln -s $HOME/keys/gh $HOME/.config/gh
 	gh config set git_protocol ssh
 fi
 
