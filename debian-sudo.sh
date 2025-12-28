@@ -23,7 +23,7 @@ localectl set-locale LANG=en_US.UTF-8
 # --- firewall
 ufw default deny incoming
 ufw allow OpenSSH
-ufw enable
+ufw --force enable
 
 # --- create user
 useradd -G sudo --create-home -s /bin/bash user 
