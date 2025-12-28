@@ -24,6 +24,8 @@ alias v=nvim
 alias p=python3
 alias jp=project_choose
 
+eval `ssh-agent` > /dev/null
+
 if command -v box &>/dev/null; then
 	eval "$(register-python-argcomplete box)"
 fi
