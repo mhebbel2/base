@@ -16,7 +16,8 @@ function repo_clone() {
 		REPO=$(gh repo list --json nameWithOwner --jq '.[].nameWithOwner' -L 300 $USERID |fzf)
 		if [ -n "$REPO" ]; then
 			NAMEOFREPO=$(basename $REPO)
-			git clone git@github.com:${REPO}.git $PROJECTS/$NAMEOFREPO
+			# git clone git@github.com:${REPO}.git $PROJECTS/$NAMEOFREPO
+			gh repo clone $REPO $PROJECTS/$NAMEOFREPO
 			cd $PROJECTS/$NAMEOFREPO
 		fi
 	fi
