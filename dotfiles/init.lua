@@ -27,7 +27,7 @@ map('n', '<Space>', '', {})
 options = { noremap = true }
 -- vim.keymap.set('i', 'jk', '<Esc>')
 -- map('n', '<leader><space>', '<C-W><C-W>', options)
-map('n', '<leader>a', ':%!qagent<cr>', options)
+map('n', '<leader>a', ':%!box<cr>', options)
 -- map('n', '<leader>e', ':Ex<cr>', options)
 -- map('n', '<leader>b', ':FzfLua buffers<cr>', options)
 -- map('n', '<leader>f', ':FzfLua files<cr>', options)

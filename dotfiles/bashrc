@@ -26,10 +26,6 @@ alias jp=project_choose
 
 eval `ssh-agent` > /dev/null
 
-if command -v box &>/dev/null; then
-	eval "$(register-python-argcomplete box)"
-fi
-
 if command -v git &>/dev/null; then
 	__git_complete g __git_main
 	alias g=git
