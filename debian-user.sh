@@ -21,9 +21,6 @@ mkdir -p $BINDIR
 TMPDIR=/tmp/install
 mkdir -p $TMPDIR
 
-ln -sf /usr/bin/batcat $HOME/.local/bin/bat
-ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
-
 ln -sf $HOME/projects/base/dotfiles/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/projects/base/dotfiles/inputrc $HOME/.inputrc
 
