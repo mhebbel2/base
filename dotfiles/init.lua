@@ -29,10 +29,10 @@ options = { noremap = true }
 -- map('n', '<leader><space>', '<C-W><C-W>', options)
 map('n', '<leader>a', ':%!box<cr>', options)
 -- map('n', '<leader>e', ':Ex<cr>', options)
--- map('n', '<leader>b', ':FzfLua buffers<cr>', options)
--- map('n', '<leader>f', ':FzfLua files<cr>', options)
--- map('n', '<leader>g', ':FzfLua grep<cr>', options)
--- map('n', '<leader>r', ':FzfLua command_history<cr>', options)
+map('n', '<leader>b', ':FzfLua buffers<cr>', options)
+map('n', '<leader>f', ':FzfLua files<cr>', options)
+map('n', '<leader>g', ':FzfLua grep<cr>', options)
+map('n', '<leader>r', ':FzfLua command_history<cr>', options)
 
 vim.keymap.set('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 
@@ -52,9 +52,9 @@ require("lazy").setup({
 	-- {
 	-- 	"neovim/nvim-lspconfig",
 	-- },
-	-- {
-	--   "ibhagwan/fzf-lua",
-	-- },
+	{
+	  "ibhagwan/fzf-lua",
+	},
 	-- {
 	--   "hrsh7th/nvim-cmp",
 	--   event = "InsertEnter",
