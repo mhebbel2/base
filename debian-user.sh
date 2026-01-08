@@ -37,7 +37,6 @@ git config --global pull.rebase false
 git config --global init.defaultBranch main
 pip3 install -qqq 'python-lsp-server[all]'
 
-
 # --- get the right yq for debian (the standard one is strange) 
 curl -sL https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$MTYPE -o $BINDIR/yq && chmod +x $BINDIR/yq
 
@@ -69,7 +68,7 @@ tar -xzf $TMPDIR/flux.tgz -C $BINDIR
 curl -sSL https://github.com/hetznercloud/cli/releases/download/v1.50.0/hcloud-linux-$MTYPE.tar.gz -o $TMPDIR/hcloud.tgz
 tar -xzf $TMPDIR/hcloud.tgz -C $BINDIR
 
-# nvim 
+# nvim --- the debian 13 version of neovim is too old for soem plugins - install a newer one
 curl -sSL https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz -o $TMPDIR/nvim.tgz
 tar -xzf $TMPDIR/nvim.tgz -C $TMPDIR
 cp -r $TMPDIR/nvim-linux-x86_64/* $HOME/.local/

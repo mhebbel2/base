@@ -19,7 +19,7 @@ for file in $PROJECTS/base/bash_functions/*; do
 	source "$file"
 done
 
-alias rg='rg --color never'
+# alias rg='rg --color never'
 alias v=nvim
 alias p=python3
 alias jp=project_choose
@@ -61,4 +61,6 @@ stty -ixon
 
 # make sure that child processes exit when you leave a shell
 shopt -s huponexit
+
+# check to see if we are in tmux if ot start it
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session ;}
