@@ -26,7 +26,7 @@ localectl set-locale LANG=en_US.UTF-8
 ufw default deny incoming
 ufw allow OpenSSH
 # --- wireguard
-ufw allow 51820/udp
+ufw allow 1984/udp
 ufw --force enable
 
 # --- create user
