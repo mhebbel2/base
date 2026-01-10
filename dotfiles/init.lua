@@ -10,7 +10,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- general options
 vim.o.undofile = true
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.ignorecase = true
