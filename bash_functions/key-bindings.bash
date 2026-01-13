@@ -126,8 +126,8 @@ if (( BASH_VERSINFO[0] < 4 )); then
   # CTRL-T - Paste the selected file path into the command line
   if [[ "${FZF_CTRL_T_COMMAND-x}" != "" ]]; then
     bind -m emacs-standard '"\C-t": " \C-b\C-k \C-u`__fzf_select__`\e\C-e\er\C-a\C-y\C-h\C-e\e \C-y\ey\C-x\C-x\C-f"'
-    bind -m vi-command '"\C-t": "\C-z\C-t\C-z"'
-    bind -m vi-insert '"\C-t": "\C-z\C-t\C-z"'
+    bind -m vi-command '"\C-f": "\C-z\C-t\C-z"'
+    bind -m vi-insert '"\C-f: "\C-z\C-t\C-z"'
   fi
 
   # CTRL-R - Paste the selected command from history into the command line
