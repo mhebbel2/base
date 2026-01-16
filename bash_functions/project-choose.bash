@@ -54,6 +54,7 @@ function project_choose() {
 	              cd $PROJECTS/$PROJ
 	      fi
 	      echo $PWD
+		  echo Branch: $(git branch --show-current)
 	fi
 }
 export -f project_choose
