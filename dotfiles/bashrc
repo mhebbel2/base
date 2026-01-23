@@ -23,6 +23,8 @@ done
 alias v=nvim
 alias p=python3
 alias jp=project_choose
+alias less=batcat
+alias cat=batcat
 
 eval `ssh-agent` > /dev/null
 

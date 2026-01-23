@@ -18,6 +18,11 @@ vim.o.laststatus = 0
 vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 vim.cmd[[colorscheme koehler]]
 
+-- folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+
 -- keymaps
 local map = vim.api.nvim_set_keymap
 
