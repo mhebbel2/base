@@ -1,4 +1,3 @@
-# KEEPASS_DB="$HOME/top-secret-password-db"
 KEEPASS_LIST="$HOME/.pass.list"
 
 function keepass-setup() {
@@ -18,3 +17,7 @@ function kpt() {
 	tmux set-buffer "$TOTP"
 }
 export -f kpt
+
+ssh-load() {
+    keepassxc-cli attachment-export "$KEEPASS_DB" "sshkeys" "$1" --stdout | ssh-add -
+}
