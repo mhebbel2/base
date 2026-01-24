@@ -17,7 +17,7 @@ fi
 touch $TOKENS_FILE
 
 SEARCH_RESULTS=$(echo $KEEPASS_XC_PASS | keepassxc-cli search -q "$DB" "+attr:API_KEY")
-echo Doing tokens...
+
 echo "$SEARCH_RESULTS" | while read -r entry_path; do
     NAME=$(echo $KEEPASS_XC_PASS | keepassxc-cli show -q  -s -a "API_KEY_NAME" "$DB" "$entry_path")
     KEY=$(echo $KEEPASS_XC_PASS | keepassxc-cli show -q  -s -a "API_KEY" "$DB" "$entry_path")
@@ -31,9 +31,9 @@ echo "$SEARCH_RESULTS" | while read -r entry_path; do
 done
 
 mkdir -p $HOME/.config/rclone
-echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "rclone.conf" --stdout > $HOME/.config/rclone/rclone.conf
+echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "rclone.conf" $HOME/.config/rclone/rclone.conf
 
 mkdir -p $HOME/.config/hcloud
-echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "hcloud_cli.toml" --stdout > $HOME/.config/hcloud/cli.toml
+echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "hcloud_cli.toml" $HOME/.config/hcloud/cli.toml
 
-echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "wg.tgz" --stdout > $HOME/wg.tgz
+echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "wg.tgz" $HOME/wg.tgz
