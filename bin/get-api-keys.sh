@@ -30,10 +30,10 @@ echo "$SEARCH_RESULTS" | while read -r entry_path; do
     fi
 done
 
-echo Doing rclone
 mkdir -p $HOME/.config/rclone
 echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "rclone.conf" --stdout > $HOME/.config/rclone/rclone.conf
 
-echo Doing hcloud
 mkdir -p $HOME/.config/hcloud
 echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "hcloud_cli.toml" --stdout > $HOME/.config/hcloud/cli.toml
+
+echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "wg.tgz" --stdout > $HOME/wg.tgz
