@@ -19,6 +19,10 @@ for file in $PROJECTS/base/bash_functions/*; do
 	source "$file"
 done
 
+if [ -f "$HOME/.local/tokens.sh" ]; then
+    source "$HOME/.local/tokens.sh"
+fi
+
 # alias rg='rg --color never'
 alias v=nvim
 alias p=python3
