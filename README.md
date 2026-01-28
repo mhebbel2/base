@@ -6,4 +6,11 @@ git clone --depth 1 https://github.com/mhebbel2/base.git
 time ./base/debian-sudo.sh
 ```
 
+# termux
+
+to install keepass on termux you first have to 
+
+```
+pkg install x11-repo
+```
 
