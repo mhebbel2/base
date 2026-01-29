@@ -39,7 +39,12 @@ function project_choose() {
 				if [ "$git_count" -gt 0 ]; then
 					options+=( "+ $(basename "$dir")" )
 				else
-					options+=( ". $(basename "$dir")" )
+					git_push_count=$(git -C "$dir" rev-list --count origin/$(git -C "$dir" branch --show-current")..$(git -C "$dir" branch --show-current") 2>/dev/null)
+					if [ "$git_push_count" -gt 0 ]; then
+						options+=( "$git_push_count $(basename "$dir")" )
+					else
+						options+=( ". $(basename "$dir")" )
+					fi
 				fi
 			else
 				options+=( "! $(basename "$dir")" )
