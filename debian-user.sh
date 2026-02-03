@@ -60,7 +60,7 @@ curl -sSL https://dl.k8s.io/release/v1.30.9/bin/linux/$MTYPE/kubectl -o $BINDIR/
 chmod +x $BINDIR/kubectl
 
 # flux
-FILENAME=v2.5.1/flux_2.5.1_linux_$MTYPE.tar.gz
+FILENAME=v2.7.5/flux_2.7.5_linux_$MTYPE.tar.gz
 curl -sSL https://github.com/fluxcd/flux2/releases/download/$FILENAME -o $TMPDIR/flux.tgz
 tar -xzf $TMPDIR/flux.tgz -C $BINDIR
 
