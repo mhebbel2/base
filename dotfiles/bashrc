@@ -12,6 +12,7 @@ export GO_ROOT=$HOME/.local/go/bin
 
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$GO_ROOT
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export DOCKER_CLI_HINTS=false
 
 source /usr/share/bash-completion/completions/git
 

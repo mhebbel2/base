@@ -11,7 +11,7 @@ echo \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #--- Now Install
-PACKAGES="git tmux vim fzf ufw fail2ban wireguard bash-completion ripgrep fdfind build-essential jq htop batcat zip unzip cmake tree postgresql-client python3-pip python3.13-venv rclone podman keepassxc-minimal"
+PACKAGES="git tmux vim fzf ufw fail2ban wireguard bash-completion ripgrep fdfind build-essential jq htop batcat zip unzip cmake tree postgresql-client python3-pip python3.13-venv rclone keepassxc-minimal"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
 apt-get -y -qq update
@@ -25,6 +25,7 @@ localectl set-locale LANG=en_US.UTF-8
 # --- firewall
 ufw default deny incoming
 ufw allow OpenSSH
+ufw allow 51820
 ufw --force enable
 
 # --- create user
