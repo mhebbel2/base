@@ -3,7 +3,7 @@ apt-get -y -qq update
 apt-get -y -qq install $VNC >/dev/null
 #
 # --- vnc
-cp /root/base/vncserver.service /etc/systemd/system/
+cp $HOME/projects/base/vncserver.service /etc/systemd/system/
 systemctl enable vncserver.service
 systemctl start vncserver.service
 
