@@ -30,6 +30,7 @@ alias p=python3
 alias jp=project_choose
 alias bat='batcat --style="grid"'
 alias psql='docker exec -it postgres-pgvector psql'
+alias mongosh='docker exec -it mongo mongosh'
 
 eval `ssh-agent` > /dev/null
 
