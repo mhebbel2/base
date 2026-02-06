@@ -29,6 +29,7 @@ alias v=nvim
 alias p=python3
 alias jp=project_choose
 alias bat='batcat --style="grid"'
+alias psql='docker exec -it postgres-pgvector psql'
 
 eval `ssh-agent` > /dev/null
 
