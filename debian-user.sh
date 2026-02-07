@@ -20,7 +20,6 @@ MTYPE=$(get_machine_type)
 BINDIR=$HOME/.local/bin
 mkdir -p $BINDIR
 
-mkdir -p $HOME/downloads
 mkdir -p $HOME/sessions
 chmod 700 $HOME/sessions
 
