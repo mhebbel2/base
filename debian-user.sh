@@ -25,7 +25,7 @@ chmod 700 $HOME/sessions
 TMPDIR=/tmp/install
 mkdir -p $TMPDIR
 
-ln -sf $HOME/projects/base/dotfiles/tmux.conf $HOME/.tmux.conf
+# ln -sf $HOME/projects/base/dotfiles/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/projects/base/dotfiles/inputrc $HOME/.inputrc
 
 mkdir -p $HOME/.config/pip

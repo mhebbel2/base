@@ -14,7 +14,6 @@ function kpt() {
 	PASS=$(cat $KEEPASS_LIST | fzf --select-1 $QUERY)
 	TOTP=$(keepassxc-cli show --totp $KEEPASS_DB "$PASS")
 	echo $TOTP
-	tmux set-buffer "$TOTP"
 }
 export -f kpt
 
