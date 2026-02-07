@@ -63,4 +63,5 @@ function project_choose() {
 		  echo Branch: $(git branch --show-current)
 	fi
 }
+alias jp=project_choose
 export -f project_choose

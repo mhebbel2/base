@@ -1,6 +1,5 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export PS1=' '
 export EDITOR=nvim
 export PATH=$HOME/.local/bin:$PATH
 export PROJECTS=$HOME/projects
@@ -15,7 +14,6 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export STORAGE=$HOME/.local/servers
 mkdir -p $STORAGE
 
-source /usr/share/bash-completion/completions/git
 
 for file in $PROJECTS/base/bash_functions/*; do
 	source "$file"
@@ -31,14 +29,13 @@ fi
 
 alias v=nvim
 alias p=python3
-alias jp=project_choose
-alias bat='batcat --style="grid"'
 alias psql='docker exec -it postgres psql'
 alias mongosh='docker exec -it mongo mongosh'
 
 eval `ssh-agent` > /dev/null
 
 if command -v git &>/dev/null; then
+	source /usr/share/bash-completion/completions/git
 	__git_complete g __git_main
 	alias g=git
 	alias gq='git commit -am "update" && git push'
@@ -75,4 +72,9 @@ stty -ixon
 shopt -s huponexit
 
 # check to see if we are in tmux if ot start it
-[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session ;}
+# [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session ;}
+#
+export PS1=':'
+if [ -n "$MY_SESSION" ]; then
+    PS1="\033[1;35m$MY_SESSION\033[0m$PS1"
+fi
