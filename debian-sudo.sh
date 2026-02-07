@@ -27,7 +27,7 @@ rm -rf /var/lib/apt/lists/*
 echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 echo fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf
 sysctl -p
-localectl set-locale LANG=en_US.UTF-8
+# localectl set-locale LANG=en_US.UTF-8
 
 # --- firewall
 ufw default deny incoming

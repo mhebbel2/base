@@ -39,7 +39,6 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
 
 git config --global pull.rebase false
 git config --global init.defaultBranch main
-pip3 install -qqq 'python-lsp-server[all]'
 
 # --- get the right yq for debian (the standard one is strange) 
 curl -sL https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$MTYPE -o $BINDIR/yq && chmod +x $BINDIR/yq
@@ -55,7 +54,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm install 20
 
-npm install -s -g typescript bash-language-server typescript-language-server 
+# LSPs
+# npm install -s -g typescript bash-language-server typescript-language-server 
+# pip3 install -qqq 'python-lsp-server[all]'
 
 # kubectl
 curl -sSL https://dl.k8s.io/release/v1.30.9/bin/linux/$MTYPE/kubectl -o $BINDIR/kubectl
