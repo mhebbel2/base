@@ -11,11 +11,18 @@ echo \
 	tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #--- Now Install
-PACKAGES="git tmux vim fzf ufw fail2ban wireguard bash-completion ripgrep fd-find build-essential jq htop bat zip unzip cmake tree python3-pip python3.13-venv rclone keepassxc-minimal"
+# Use --no-install-recommends to skip optional bloat
+INSTALL_OPTS="-y -qq --no-install-recommends"
+
+PACKAGES="git tmux fzf ufw fail2ban wireguard bash-completion ripgrep fd-find jq htop python3-pip python3.13-venv rclone keepassxc-minimal"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
-apt-get -y -qq update
-apt-get -y -qq install $PACKAGES $DOCKER >/dev/null
+apt-get $INSTALL_OPTS update
+apt-get $INSTALL_OPTS install $PACKAGES $DOCKER
+
+# Clean up apt cache immediately to save space
+apt-get clean
+rm -rf /var/lib/apt/lists/*
 # ---
 echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 echo fs.inotify.max_user_watches=524288 |  tee -a /etc/sysctl.conf
@@ -34,7 +41,6 @@ usermod -aG docker user
 
 cp -r .ssh /home/user/
 mkdir -p /home/user/projects/
-
 cp -r /root/base /home/user/projects
 
 chown -R user /home/user
