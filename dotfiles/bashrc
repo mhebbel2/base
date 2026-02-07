@@ -71,10 +71,7 @@ stty -ixon
 # make sure that child processes exit when you leave a shell
 shopt -s huponexit
 
-# check to see if we are in tmux if ot start it
-# [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session ;}
-#
-export PS1=':'
+export PS1=" "
 if [ -n "$MY_SESSION" ]; then
-    PS1="\033[1;35m$MY_SESSION\033[0m$PS1"
+    export PS1="> "
 fi
