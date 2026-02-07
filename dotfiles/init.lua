@@ -1,12 +1,12 @@
 -- bootstrap lazy,nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- if not (vim.uv or vim.loop).fs_stat(lazypath) then
+--   vim.fn.system({
+--     "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
+--     lazypath,
+--   })
+-- end
+-- vim.opt.rtp:prepend(lazypath)
 
 -- general options
 vim.o.undofile = true
@@ -30,16 +30,13 @@ local map = vim.api.nvim_set_keymap
 map('n', '<Space>', '', {})
 
 options = { noremap = true }
--- vim.keymap.set('i', 'jk', '<Esc>')
 -- map('n', '<leader><space>', '<C-W><C-W>', options)
 map('n', '<leader>a', ':%!box -a coder<cr>', options)
 map('n', '<leader>e', ':Ex<cr>', options)
-map('n', '<leader>b', ':FzfLua buffers<cr>', options)
+map('n', '<leader>b', ':b#<cr>', options)
 map('n', '<leader>f', ':FzfLua files<cr>', options)
 map('n', '<leader>g', ':FzfLua grep<cr>', options)
 map('n', '<leader>r', ':FzfLua command_history<cr>', options)
-
-vim.keymap.set('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 
 vim.keymap.set("n", "<space>c", function()
   vim.ui.input({}, function(c) 
@@ -53,13 +50,13 @@ vim.keymap.set("n", "<space>c", function()
 end)
 
 -- Plugins
-require("lazy").setup({
+-- require("lazy").setup({
 	-- {
 	-- 	"neovim/nvim-lspconfig",
 	-- },
-	{
-	  "ibhagwan/fzf-lua",
-	},
+	-- {
+	--   "ibhagwan/fzf-lua",
+	-- },
 	-- {
 	--   "hrsh7th/nvim-cmp",
 	--   event = "InsertEnter",
@@ -79,8 +76,8 @@ require("lazy").setup({
 	-- {
 	-- 	"terrortylor/nvim-comment"
 	-- },
-})
-
+-- })
+--
 -- require("mason").setup()
 -- require("mason-lspconfig").setup()
 
