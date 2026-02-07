@@ -5,7 +5,7 @@ dattach() {
         return 1
     fi
 	local session_short_name="${session_name##*/}"
-    dtach -A $session_name bash -c "export MY_SESSION='$session_short_name'; exec bash"
+    dtach -A $session_name bash -c "export MY_SESSION='$session_short_name'; exec bash" -r none
 }
 
 alias da='dattach'
