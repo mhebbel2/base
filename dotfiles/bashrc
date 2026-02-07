@@ -25,6 +25,10 @@ if [ -f "$HOME/.local/tokens.sh" ]; then
     source "$HOME/.local/tokens.sh"
 fi
 
+if [ -f "$HOME/.local/tokens_manual.sh" ]; then
+    source "$HOME/.local/tokens_manual.sh"
+fi
+
 alias v=nvim
 alias p=python3
 alias jp=project_choose

@@ -37,3 +37,4 @@ mkdir -p $HOME/.config/hcloud
 echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "hcloud_cli.toml" $HOME/.config/hcloud/cli.toml
 
 echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "wg.tgz" $HOME/wg.tgz
+echo $KEEPASS_XC_PASS | keepassxc-cli attachment-export -q "$KEEPASS_DB" "dev" "tokens_manual.sh" $HOME/.local/tokens_manual.sh
