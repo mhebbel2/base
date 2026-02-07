@@ -44,8 +44,6 @@ curl -sL https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$MTY
 curl -sL https://github.com/cli/cli/releases/download/v2.83.2/gh_2.83.2_linux_$MTYPE.tar.gz -o $TMPDIR/gh.tgz
 tar -xf $TMPDIR/gh.tgz -C $BINDIR --strip-components=2 gh_2.83.2_linux_$MTYPE/bin/gh
 mkdir -p $HOME/.config
-ln -sf $HOME/keys/gh $HOME/.config/gh
-# gh config set git_protocol ssh
 
 # nvm/node/npm
 curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
