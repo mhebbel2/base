@@ -18,6 +18,8 @@ MTYPE=$(get_machine_type)
 BINDIR=$HOME/.local/bin
 mkdir -p $BINDIR
 
+mkdir -p $HOME/downloads
+
 TMPDIR=/tmp/install
 mkdir -p $TMPDIR
 
