@@ -13,6 +13,8 @@ get_machine_type() {
     esac
 }
 
+git -C $HOME/projects/base remote set-url origin git@github.com:mhebbel2/base.git
+
 MTYPE=$(get_machine_type)
 
 BINDIR=$HOME/.local/bin
