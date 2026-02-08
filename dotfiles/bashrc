@@ -31,7 +31,8 @@ alias p=python3
 alias psql='docker exec -it postgres psql'
 alias mongosh='docker exec -it mongo mongosh'
 
-eval `ssh-agent` > /dev/null
+eval $(keychain --eval --quiet)
+# eval `ssh-agent` > /dev/null
 
 if command -v git &>/dev/null; then
 	source /usr/share/bash-completion/completions/git

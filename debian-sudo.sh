@@ -14,7 +14,7 @@ echo \
 # Use --no-install-recommends to skip optional bloat
 INSTALL_OPTS="-y -qq --no-install-recommends"
 
-PACKAGES="git dtach fzf ufw fail2ban wireguard bash-completion ripgrep fd-find jq htop python3-pip python3.13-venv rclone keepassxc-minimal"
+PACKAGES="git dtach fzf ufw fail2ban wireguard bash-completion ripgrep fd-find jq htop python3-pip python3.13-venv rclone keychain keepassxc-minimal"
 DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
 
 apt-get $INSTALL_OPTS update
