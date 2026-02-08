@@ -64,14 +64,12 @@ if command -v fzf &>/dev/null; then
 	source <(fzf --bash)
 fi
 
-# Disable XON/XOFF flow control (Ctrl+S and Ctrl+Q)
 stty -ixon
 
-# make sure that child processes exit when you leave a shell
 shopt -s huponexit
 
-if [ -n "SESSION_LOG" ]; then
-	export PS1="! "
-else
+if [ -n "$SESSION_LOG" ]; then
 	export PS1=" "
+else
+	export PS1="! "
 fi

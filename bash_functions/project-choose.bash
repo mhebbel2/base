@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p $PROJECTS
 
 function repo_clone() {
 	if [ -f "$HOME/projects/dev/gh_users.txt" ]; then
@@ -25,7 +26,6 @@ function repo_clone() {
 export -f repo_clone
 
 function project_choose() {
-	mkdir -p $PROJECTS
 	if [ -z "$1" ]; then
 	  QUERY=""
 	else
