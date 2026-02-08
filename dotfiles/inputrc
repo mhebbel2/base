@@ -1,9 +1,9 @@
 set keyseq-timeout 10
 
 set editing-mode vi
-set show-mode-in-prompt on
-set vi-cmd-mode-string |
-set vi-ins-mode-string -
+set show-mode-in-prompt off
+# set vi-cmd-mode-string |
+# set vi-ins-mode-string -
 
 set page-completions off
 set bell-style none

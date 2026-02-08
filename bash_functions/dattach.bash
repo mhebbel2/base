@@ -4,6 +4,10 @@ mkdir -p $SESSION_DIR
 mkdir -p $SESSION_LOGS
 
 dattach() {
+	if [ -n "$SESSION_LOG" ]; then
+		echo "You are already in a session. Please detach first."
+		return 1
+	fi
 	if [ -z "$1" ]; then
 	  QUERY=""
 	else
@@ -25,4 +29,13 @@ dattach() {
 	dtach -A $SESSION_DIR/$session_name bash -c "export SESSION_LOG=$SLOG; script -f -q -a $SLOG"
 }
 
+gsl() {
+	if [ -z "$SESSION_LOG" ]; then
+		echo "SESSION_LOG is not set"
+		return 1
+	fi
+	echo "$SESSION_LOG"
+}
+
 alias da='dattach'
+alias gsl='gsl'
