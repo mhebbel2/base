@@ -14,7 +14,6 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export STORAGE=$HOME/.local/servers
 mkdir -p $STORAGE
 
-
 for file in $PROJECTS/base/bash_functions/*; do
 	source "$file"
 done
@@ -71,8 +70,8 @@ stty -ixon
 # make sure that child processes exit when you leave a shell
 shopt -s huponexit
 
-if [ -n "$MY_SESSION" ]; then
-	export PS1="> "
+if [ -n "SESSION_LOG" ]; then
+	export PS1="! "
 else
 	export PS1=" "
 fi

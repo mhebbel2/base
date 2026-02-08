@@ -1,11 +1,8 @@
 dattach() {
     local session_name=$1
-    if [ -z "$session_name" ]; then
-        echo "Usage: dattach <session_name_with dir>"
-        return 1
-    fi
 	local session_short_name="${session_name##*/}"
-    dtach -A $session_name bash -c "export MY_SESSION='$session_short_name'; exec bash" -r none
+	local SLOG=$HOME/session_logs/$session_short_name.log
+	dtach -A $session_name bash -c "export SESSION_LOG=$SLOG; script -f -q -a $SLOG"
 }
 
 alias da='dattach'
