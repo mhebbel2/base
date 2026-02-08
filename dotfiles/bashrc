@@ -69,7 +69,7 @@ stty -ixon
 shopt -s huponexit
 
 if [ -n "$SESSION_LOG" ]; then
-	export PS1=">---<\n> "
+	export PS1="---\n$ "
 else
 	export PS1="! "
 fi
