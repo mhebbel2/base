@@ -1,4 +1,4 @@
 
-git config user.email edhak@somewhere.com
-git config user.name edhak
+git config user.email mark.hebbel@chainstep.com
+git config user.name mhebbel2
 
