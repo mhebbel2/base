@@ -12,11 +12,11 @@ function clone_repo() {
 	pwd
 }
 
-function codeberg() {
-	local repo=$(curl -sS -H "Authorization: token $CODEBERG_API_TOKEN"  "https://codeberg.org/api/v1/user/repos" | jq -r '.[] | "\(.ssh_url)"' | fzf)
-	clone_repo "$repo"
-}
-
+# function codeberg() {
+# 	local repo=$(curl -sS -H "Authorization: token $CODEBERG_API_TOKEN"  "https://codeberg.org/api/v1/user/repos" | jq -r '.[] | "\(.ssh_url)"' | fzf)
+# 	clone_repo "$repo"
+# }
+#
 function github() {
 	# local repo=$(gh repo list --no-archived --json sshUrl --jq '.[].sshUrl' -L 400 $1 |fzf)
 	local repo=$(cat $HOME/.local/github_repos.txt | fzf)
