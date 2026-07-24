@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for d in $HOME/projects/*/; do
+	echo -e "\n\033[1;34m$d\033[0m"
+	git -C $d status -bs
+done

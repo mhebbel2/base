@@ -1,0 +1,90 @@
+# Locale (already handled in .bashrc, but set here for sourced scripts)
+export TERM=screen-256color
+export EDITOR=nvim
+export PATH=$HOME/.local/bin:$PATH
+export PROJECTS=$HOME/projects
+mkdir -p $PROJECTS
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export GO_PATH=$HOME/go
+export GO_ROOT=$HOME/.local/go/bin
+
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$GO_ROOT:$PROJECTS/base/bin
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+if [[ "$PREFIX" !=  *"/com.termux/"* ]] && command -v loginctl &>/dev/null; then
+	if [ -z "$DISPLAY" ]; then
+		export DISPLAY=$(loginctl show-session $(loginctl | grep $USER | awk '{print $1}') -p Display --value 2>/dev/null)
+		# Fallback if loginctl fails
+		[ -z "$DISPLAY" ] && export DISPLAY=:10.0
+	fi
+fi
+
+for file in $PROJECTS/base/bash_functions/*; do
+	source "$file"
+done
+
+if [ -f "$HOME/.local/tokens.sh" ]; then
+    source "$HOME/.local/tokens.sh"
+    source "$HOME/.local/tokens_manual.sh"
+fi
+
+bind '"jp": "cd $(find $PROJECTS -maxdepth 1 -type d -not -path \"*/.*\" | fzf --reverse --height 30%);pwd\n"'
+
+eval $(keychain --eval --quiet)
+
+alias v=nvim
+
+if command -v git &>/dev/null; then
+	alias g=git
+	alias gq='git commit -am "update" && git push'
+	alias gs='git status -b --porcelain=1'
+fi
+
+if command -v kubectl &>/dev/null; then
+	alias k='kubectl'
+	source <(kubectl completion bash)
+	complete -o default -F __start_kubectl k
+	export KUBE_EDITOR=nvim
+fi
+
+if command -v flux &>/dev/null; then
+	source <(flux completion bash)
+fi
+
+if command -v hcloud &>/dev/null; then
+	source <(hcloud completion bash)
+fi
+
+if command -v fzf &>/dev/null; then
+	source <(fzf --bash)
+fi
+
+if command -v opencode &>/dev/null; then
+	source <(opencode completion)
+fi
+
+if command -v goose &>/dev/null; then
+	source <(goose completion bash)
+fi
+
+stty -ixon 2>/dev/null
+
+shopt -s huponexit
+shopt -s histappend
+shopt -s checkwinsize
+export HISTCONTROL=ignoreboth
+
+if [[ -n "$DA_SESSION" ]]; then
+	export PS1=". "
+else
+	export PS1="! "
+fi

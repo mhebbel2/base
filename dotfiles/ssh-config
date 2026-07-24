@@ -1,0 +1,5 @@
+Host dev
+	ForwardAgent yes
+	SendEnv *_TOKEN *_API_KEY
+	Hostname 10.99.0.1
+	User user
