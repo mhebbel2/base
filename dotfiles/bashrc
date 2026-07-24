@@ -5,11 +5,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PROJECTS=$HOME/projects
 mkdir -p $PROJECTS
 
-export ANDROID_HOME=$HOME/Android/Sdk
-export GO_PATH=$HOME/go
-export GO_ROOT=$HOME/.local/go/bin
-
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$GO_ROOT:$PROJECTS/base/bin
+export PATH=$PATH:$PROJECTS/base/bin
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 if ! shopt -oq posix; then
@@ -34,6 +30,9 @@ done
 
 if [ -f "$HOME/.local/tokens.sh" ]; then
     source "$HOME/.local/tokens.sh"
+fi
+
+if [ -f "$HOME/.local/tokens_manual.sh" ]; then
     source "$HOME/.local/tokens_manual.sh"
 fi
 
@@ -70,10 +69,6 @@ fi
 
 if command -v opencode &>/dev/null; then
 	source <(opencode completion)
-fi
-
-if command -v goose &>/dev/null; then
-	source <(goose completion bash)
 fi
 
 stty -ixon 2>/dev/null
