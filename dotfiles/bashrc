@@ -48,21 +48,6 @@ if command -v git &>/dev/null; then
 	alias gs='git status -b --porcelain=1'
 fi
 
-if command -v kubectl &>/dev/null; then
-	alias k='kubectl'
-	source <(kubectl completion bash)
-	complete -o default -F __start_kubectl k
-	export KUBE_EDITOR=nvim
-fi
-
-if command -v flux &>/dev/null; then
-	source <(flux completion bash)
-fi
-
-if command -v hcloud &>/dev/null; then
-	source <(hcloud completion bash)
-fi
-
 if command -v fzf &>/dev/null; then
 	source <(fzf --bash)
 fi

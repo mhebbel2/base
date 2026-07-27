@@ -42,13 +42,7 @@ if [[ "$PREFIX" !=  *"/com.termux/"* ]]; then
 	# npm install -s -g typescript bash-language-server typescript-language-server 
 	# pip3 install -qqq 'python-lsp-server[all]'
 
-	# kubectl
-	curl -sSL https://dl.k8s.io/release/v1.33.4/bin/linux/$ARCH/kubectl -o $BINDIR/kubectl
-	chmod +x $BINDIR/kubectl
-
-	# flux && hcloud && nvim
-	curl -sSL "https://github.com/fluxcd/flux2/releases/download/v2.7.5/flux_2.7.5_linux_$ARCH.tar.gz" | tar -xz -C "$BINDIR"
-	curl -sSL "https://github.com/hetznercloud/cli/releases/download/v1.50.0/hcloud-linux-$ARCH.tar.gz" | tar -xz -C "$BINDIR"
+	# nvim
 	curl -sSL "https://github.com/neovim/neovim/releases/download/v0.12.2/nvim-linux-x86_64.tar.gz" | tar -xz -C "$HOME/.local/" --strip-components=1
 fi
 
