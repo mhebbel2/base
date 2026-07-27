@@ -6,8 +6,6 @@ BINDIR=$HOME/.local/bin
 mkdir -p $BINDIR
 mkdir -p $HOME/.config/rclone
 mkdir -p $HOME/.config/hcloud
-mkdir -p $HOME/.config/ntfy
-ln -sf $BASEDIR/dotfiles/client.yml $HOME/.config/ntfy/
 
 ln -sf $BASEDIR/dotfiles/inputrc $HOME/.inputrc
 
