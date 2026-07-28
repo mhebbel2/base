@@ -25,6 +25,7 @@ pkg update -qq && pkg upgrade -y -qq
 pkg install -yy openssh git 
 pkg install -yy bash-completion keychain termux-services x11-repo keepassxc
 curl -fsSL https://raw.githubusercontent.com/DevCoreXOfficial/core-termux/main/install.sh | bash
+core install lang --nodejs
 core install dev --openssh --fzf
 core install editor --neovim
 core install ai --opencode
