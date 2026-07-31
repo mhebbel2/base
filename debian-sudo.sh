@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 INSTALL_OPTS="-y -qq --no-install-recommends"
 
 PACKAGES="git dtach fzf ufw wireguard bash-completion ripgrep fd-find jq python3-pip python3.13-venv pipx rclone keychain keepassxc-minimal build-essential lsof sshfs"
-RDP_DESKTOP="xfce4 xfce4-goodies xrdp chromium copyq"
+RDP_DESKTOP="xfce4 xorgxrdp xfce4-goodies xrdp chromium copyq"
 
 apt-get $INSTALL_OPTS update
 apt-get $INSTALL_OPTS install $PACKAGES
