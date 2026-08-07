@@ -3,7 +3,6 @@ export TERM=screen-256color
 export EDITOR=nvim
 export PATH=$HOME/.local/bin:$PATH
 export PROJECTS=$HOME/projects
-mkdir -p $PROJECTS
 
 export PATH=$PATH:$PROJECTS/base/bin
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
@@ -24,9 +23,9 @@ if [[ "$PREFIX" !=  *"/com.termux/"* ]] && command -v loginctl &>/dev/null; then
 	fi
 fi
 
-for file in $PROJECTS/base/bash_functions/*; do
-	source "$file"
-done
+if [ -f "$PROJECTS/base/bash_functions.bash" ]; then
+    source "$PROJECTS/base/bash_functions.bash"
+fi
 
 if [ -f "$HOME/.local/tokens.sh" ]; then
     source "$HOME/.local/tokens.sh"
