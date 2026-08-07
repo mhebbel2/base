@@ -6,7 +6,7 @@ export DEBIAN_FRONTEND=noninteractive
 # Use --no-install-recommends to skip optional bloat
 INSTALL_OPTS="-y -qq --no-install-recommends"
 
-PACKAGES="git dtach fzf ufw wireguard bash-completion ripgrep fd-find jq python3-pip python3.13-venv pipx rclone keychain keepassxc-minimal build-essential lsof sshfs"
+PACKAGES="git dtach fzf ufw bash-completion ripgrep fd-find jq python3-pip python3.13-venv pipx rclone keychain keepassxc-minimal build-essential lsof sshfs"
 RDP_DESKTOP="xfce4 xorgxrdp xfce4-goodies xrdp chromium copyq"
 
 apt-get $INSTALL_OPTS update
@@ -23,8 +23,6 @@ sysctl -p
 # --- firewall
 ufw default deny incoming
 ufw limit OpenSSH
-ufw allow 51820 # Wireguard
-ufw allow in on wg-dev to 10.99.0.1 from 10.99.0.2
 ufw --force enable
 
 # --- create user
