@@ -8,22 +8,11 @@ time ./base/debian-sudo.sh
 
 # termux
 
-
-Classic:
-```
-termux-setup-storage
-pkg update -qq && pkg upgrade -y -qq
-pkg install -yy openssh git 
-pkg install -yy bash-completion neovim fzf keychain termux-services x11-repo keepassxc
-git clone https://github.com/mhebbel2/base.git
-```
-
 core-termux:
 ```
 termux-setup-storage
 pkg update -qq && pkg upgrade -y -qq
-pkg install -yy openssh git 
-pkg install -yy bash-completion keychain termux-services x11-repo keepassxc
+pkg install -yy openssh git bash-completion keychain termux-services x11-repo keepassxc
 curl -fsSL https://raw.githubusercontent.com/DevCoreXOfficial/core-termux/main/install.sh | bash
 core install lang --nodejs
 core install dev --openssh --fzf
