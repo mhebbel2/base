@@ -26,8 +26,7 @@ ufw limit OpenSSH
 ufw --force enable
 
 # --- create user
-useradd -m -G sudo,docker --create-home -s /bin/bash user 
-# sudo usermod -aG video,render $USER
+useradd -m -G sudo --create-home -s /bin/bash user 
 
 cp -r .ssh /home/user/
 mkdir -p /home/user/projects

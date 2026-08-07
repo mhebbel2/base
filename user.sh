@@ -36,10 +36,6 @@ if [[ "$PREFIX" !=  *"/com.termux/"* ]]; then
 	# opencode
 	npm i -g opencode-ai
 
-	# LSPs
-	# npm install -s -g typescript bash-language-server typescript-language-server 
-	# pip3 install -qqq 'python-lsp-server[all]'
-
 	# nvim
 	curl -sSL "https://github.com/neovim/neovim/releases/download/v0.12.2/nvim-linux-x86_64.tar.gz" | tar -xz -C "$HOME/.local/" --strip-components=1
 fi

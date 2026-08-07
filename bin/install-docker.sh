@@ -14,3 +14,5 @@ DOCKER="uidmap docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 
 sudo apt-get $INSTALL_OPTS update
 sudo apt-get $INSTALL_OPTS install $DOCKER
+
+sudo usermod -aG docker user
