@@ -8,7 +8,6 @@ time ./base/debian-sudo.sh
 
 # termux
 
-core-termux:
 ```
 termux-setup-storage
 pkg update -qq && pkg upgrade -y -qq
@@ -18,7 +17,6 @@ core install lang --nodejs
 core install dev --openssh --fzf
 core install editor --neovim
 core install ai --opencode
-
+git clone https://github.com/mhebbel2/base.git
 ```
-
 

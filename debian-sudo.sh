@@ -33,4 +33,4 @@ mkdir -p /home/user/projects
 cp -r /root/base /home/user/projects
 chown -R user /home/user
 
-su - user /home/user/projects/base/user.sh
+su - user /home/user/projects/base/debian-user.sh
