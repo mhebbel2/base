@@ -23,10 +23,6 @@ if [[ "$PREFIX" !=  *"/com.termux/"* ]] && command -v loginctl &>/dev/null; then
 	fi
 fi
 
-if [ -f "$PROJECTS/base/bash_functions.bash" ]; then
-    source "$PROJECTS/base/bash_functions.bash"
-fi
-
 if [ -f "$HOME/.local/tokens.sh" ]; then
     source "$HOME/.local/tokens.sh"
 fi
