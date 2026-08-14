@@ -28,7 +28,7 @@ fi
 
 bind '"jp": "cd $(find $PROJECTS -maxdepth 1 -type d -not -path \"*/.*\" | fzf --reverse --height 30%);pwd\n"'
 
-eval $(keychain --eval --quiet)
+eval "$(ssh-agent -s)" >/dev/null
 
 alias v=nvim
 

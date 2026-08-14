@@ -6,7 +6,7 @@ export DEBIAN_FRONTEND=noninteractive
 # Use --no-install-recommends to skip optional bloat
 INSTALL_OPTS="-y -qq --no-install-recommends"
 
-PACKAGES="git dtach fzf ufw bash-completion ripgrep fd-find jq python3-pip python3.13-venv pipx rclone keychain keepassxc-minimal build-essential lsof sshfs"
+PACKAGES="git dtach fzf ufw bash-completion ripgrep fd-find jq python3-pip python3.13-venv pipx rclone keepassxc-minimal build-essential lsof sshfs"
 RDP_DESKTOP="xfce4 xorgxrdp xfce4-goodies xrdp chromium copyq"
 
 apt-get $INSTALL_OPTS update
