@@ -58,5 +58,4 @@ clone_skills() {
 }
 
 mkdir -p "${OPENCODE_CONFIG}"
-clone_skills git@github.com:tavily-ai/skills.git
 clone_skills git@github.com:anthropics/skills.git
