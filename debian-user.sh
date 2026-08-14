@@ -27,9 +27,6 @@ if [[ "$PREFIX" !=  *"/com.termux/"* ]]; then
 	# Maps x86_64 -> amd64, aarch64 -> arm64
 	ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
 
-	# --- get the right yq for debian (the standard one is strange) 
-	curl -sL https://github.com/mikefarah/yq/releases/download/v4.45.4/yq_linux_$ARCH -o $BINDIR/yq && chmod +x $BINDIR/yq
-
 	# nvm/node/npm (not on termux)
 	curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 	export NVM_DIR="$HOME/.nvm"
