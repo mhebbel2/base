@@ -37,9 +37,6 @@ map('n', '<leader>e', ':Ex<cr>', options)
 map('n', '<leader>b', ':FzfLua buffers<cr>', options)
 map('n', '<leader>f', ':FzfLua files<cr>', options)
 map('n', '<leader>g', ':FzfLua grep<cr>', options)
-map('n', '<leader>d', ':vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis<CR>', options)
-map('n', '<leader>o', ':terminal opencode<CR>:file opencode<CR>', options)
-map('n', '<leader>t', '<C-W>s<C-W>j:terminal<CR>', options)
 
 -- don't clash with dtach
 map('t', '<C-Space>', [[<C-\><C-n>]], { noremap = true })

@@ -1,4 +1,3 @@
-# Locale (already handled in .bashrc, but set here for sourced scripts)
 export TERM=screen-256color
 export EDITOR=nvim
 export PATH=$HOME/.local/bin:$PATH
@@ -54,8 +53,4 @@ shopt -s histappend
 shopt -s checkwinsize
 export HISTCONTROL=ignoreboth
 
-if [[ -n "$DA_SESSION" ]]; then
-	export PS1=". "
-else
-	export PS1="! "
-fi
+export PS1=". "
