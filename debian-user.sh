@@ -14,10 +14,7 @@ ln -sf $BASEDIR/dotfiles/init.lua $HOME/.config/nvim/init.lua
 git config --global pull.rebase false
 git config --global init.defaultBranch main
 
-touch $HOME/.bashrc
-if ! grep -q "base/dotfiles/bashrc" $HOME/.bashrc; then
-    echo "source ${BASEDIR}/dotfiles/bashrc" >> $HOME/.bashrc
-fi
+cp $BASEDIR/dotfiles/profile $HOME/.profile
 
 if [[ "$PREFIX" !=  *"/com.termux/"* ]]; then
 	mkdir -p $BINDIR
