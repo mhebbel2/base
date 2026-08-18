@@ -1,7 +1,6 @@
 #!/bin/bash
 
-org=${1:-chainstep}
-repo=$(gh repo list --no-archived --json sshUrl --jq '.[].sshUrl' -L 400 $org | fzf)
+repo=$({ gh repo list --no-archived --json sshUrl --jq '.[].sshUrl' -L 400; gh repo list --no-archived --json sshUrl --jq '.[].sshUrl' -L 400 chainstep; } | sort -u | fzf)
 git clone $repo $PROJECTS/$(basename $repo .git)
 cd $PROJECTS/$(basename $repo .git)
 pwd
