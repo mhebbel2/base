@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# repo=$(gh repo list --no-archived --json sshUrl --jq '.[].sshUrl' -L 400 $1 |fzf)
-repo=$(gh repo list --no-archived --json sshUrl --jq '.[].sshUrl' -L 400 $1 | fzf)
-gh repo clone $repo $PROJECTS
+org=${1:-chainstep}
+repo=$(gh repo list --no-archived --json sshUrl --jq '.[].sshUrl' -L 400 $org | fzf)
+git clone $repo $PROJECTS/$(basename $repo .git)
 cd $PROJECTS/$(basename $repo .git)
 pwd
 $PROJECTS/base/bin/set_git_config.sh
